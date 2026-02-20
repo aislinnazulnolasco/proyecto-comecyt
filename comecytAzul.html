@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página Bilingüe Interactiva</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 id="title">Bienvenido a la página bilingüe</h1>
+    <nav>
+      <button onclick="setLanguage('es')">Español 🇲🇽</button>
+      <button onclick="setLanguage('en')">English 🇺🇸</button>
+      <a href="#colors">Colores</a>
+      <a href="#animals">Animales</a>
+      <a href="#adjectives">Adjetivos</a>
+      <a href="#verb">Verbo To Be</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección Colores -->
+    <section id="colors" class="card">
+      <h2 id="colorsTitle">Juego: Aprende los colores</h2>
+      <p id="colorsQuestion">¿De qué color es el cielo?</p>
+      <button onclick="checkColor('azul')">Azul</button>
+      <button onclick="checkColor('rojo')">Rojo</button>
+      <button onclick="checkColor('verde')">Verde</button>
+      <p id="colorsFeedback"></p>
+    </section>
+
+    <!-- Sección Animales -->
+    <section id="animals" class="card">
+      <h2 id="animalsTitle">Animales</h2>
+      <p id="animalsIntro">Aprende los nombres de animales en inglés y español.</p>
+      <button onclick="checkAnimal('dog')">Dog 🐶</button>
+      <button onclick="checkAnimal('cat')">Cat 🐱</button>
+      <button onclick="checkAnimal('lion')">Lion 🦁</button>
+      <p id="animalsFeedback"></p>
+    </section>
+
+    <!-- Sección Adjetivos -->
+    <section id="adjectives" class="card">
+      <h2 id="adjTitle">Adjetivos y adverbios</h2>
+      <p id="adjContent">Selecciona el adjetivo correcto para la frase:</p>
+      <p id="adjQuestion">El perro es ______.</p>
+      <button onclick="checkAdj('grande')">Grande</button>
+      <button onclick="checkAdj('rápido')">Rápido</button>
+      <button onclick="checkAdj('feliz')">Feliz</button>
+      <p id="adjFeedback"></p>
+    </section>
+
+    <!-- Sección Verbo To Be -->
+    <section id="verb" class="card">
+      <h2 id="verbTitle">El verbo To Be</h2>
+      <p id="verbContent">Completa la frase:</p>
+      <p id="verbQuestion">I ___ a student.</p>
+      <button onclick="checkVerb('am')">am</button>
+      <button onclick="checkVerb('is')">is</button>
+      <button onclick="checkVerb('are')">are</button>
+      <p id="verbFeedback"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Proyecto Escolar</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
