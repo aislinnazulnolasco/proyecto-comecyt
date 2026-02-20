@@ -1,71 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Página Bilingüe Interactiva</title>
-  <link rel="stylesheet" href="comecytAzul.css">
+    <meta charset="UTF-8">
+    <title>English Fun Academy</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1 id="title">Bienvenido a la página bilingüe</h1>
-    <nav>
-      <button onclick="setLanguage('es')">Español 🇲🇽</button>
-      <button onclick="setLanguage('en')">English 🇺🇸</button>
-      <a href="#colors">Colores</a>
-      <a href="#animals">Animales</a>
-      <a href="#adjectives">Adjetivos</a>
-      <a href="#verb">Verbo To Be</a>
-    </nav>
-  </header>
 
-  <main>
-    <!-- Sección Colores -->
-    <section id="colors" class="card">
-      <h2 id="colorsTitle">Juego: Aprende los colores</h2>
-      <p id="colorsQuestion">¿De qué color es el cielo?</p>
-      <button onclick="checkColor('azul')">Azul</button>
-      <button onclick="checkColor('rojo')">Rojo</button>
-      <button onclick="checkColor('verde')">Verde</button>
-      <p id="colorsFeedback"></p>
-    </section>
+<header>
+    <h1>🌎 English Fun Academy</h1>
+    <p>Aprende Inglés Paso a Paso | Learn English Step by Step</p>
+</header>
 
-    <!-- Sección Animales -->
-    <section id="animals" class="card">
-      <h2 id="animalsTitle">Animales</h2>
-      <p id="animalsIntro">Aprende los nombres de animales en inglés y español.</p>
-      <button onclick="checkAnimal('dog')">Dog 🐶</button>
-      <button onclick="checkAnimal('cat')">Cat 🐱</button>
-      <button onclick="checkAnimal('lion')">Lion 🦁</button>
-      <p id="animalsFeedback"></p>
-    </section>
+<nav>
+    <button onclick="showSection('intro')">Inicio</button>
+    <button onclick="showSection('toBe')">Verbo To Be</button>
+    <button onclick="showSection('present')">Simple Present</button>
+    <button onclick="showSection('continuous')">Present Continuous</button>
+    <button onclick="showSection('past')">Past Simple</button>
+    <button onclick="showSection('future')">Future</button>
+    <button onclick="showSection('quiz')">Examen Final</button>
+</nav>
 
-    <!-- Sección Adjetivos -->
-    <section id="adjectives" class="card">
-      <h2 id="adjTitle">Adjetivos y adverbios</h2>
-      <p id="adjContent">Selecciona el adjetivo correcto para la frase:</p>
-      <p id="adjQuestion">El perro es ______.</p>
-      <button onclick="checkAdj('grande')">Grande</button>
-      <button onclick="checkAdj('rápido')">Rápido</button>
-      <button onclick="checkAdj('feliz')">Feliz</button>
-      <p id="adjFeedback"></p>
-    </section>
+<main>
 
-    <!-- Sección Verbo To Be -->
-    <section id="verb" class="card">
-      <h2 id="verbTitle">El verbo To Be</h2>
-      <p id="verbContent">Completa la frase:</p>
-      <p id="verbQuestion">I ___ a student.</p>
-      <button onclick="checkVerb('am')">am</button>
-      <button onclick="checkVerb('is')">is</button>
-      <button onclick="checkVerb('are')">are</button>
-      <p id="verbFeedback"></p>
-    </section>
-  </main>
+<!-- INTRO -->
+<section id="intro" class="content">
+    <h2>👋 Bienvenido</h2>
+    <p>
+        Esta página fue creada para que niños de primaria aprendan inglés
+        desde cero, paso a paso y con explicaciones claras en español e inglés.
+    </p>
+    <p>
+        Aprenderemos cómo formar oraciones, cómo usar los tiempos verbales
+        y cómo responder correctamente.
+    </p>
+</section>
 
-  <footer>
-    <p>© 2026 Proyecto Escolar</p>
-  </footer>
+<!-- TO BE -->
+<section id="toBe" class="content hidden">
+    <h2>📘 VERBO TO BE (Ser / Estar)</h2>
 
-  <script src="script.js"></script>
+    <h3>1️⃣ ¿Qué significa?</h3>
+    <p>
+        El verbo <b>To Be</b> significa <b>ser</b> o <b>estar</b>.
+        Es uno de los verbos MÁS importantes del inglés.
+    </p>
+
+    <h3>2️⃣ Formas del verbo</h3>
+    <table>
+        <tr><th>Pronombre</th><th>Verbo</th><th>Ejemplo</th></tr>
+        <tr><td>I</td><td>am</td><td>I am happy</td></tr>
+        <tr><td>You</td><td>are</td><td>You are tall</td></tr>
+        <tr><td>He</td><td>is</td><td>He is smart</td></tr>
+        <tr><td>She</td><td>is</td><td>She is kind</td></tr>
+        <tr><td>It</td><td>is</td><td>It is big</td></tr>
+        <tr><td>We</td><td>are</td><td>We are friends</td></tr>
+        <tr><td>They</td><td>are</td><td>They are students</td></tr>
+    </table>
+
+    <h3>3️⃣ Forma negativa</h3>
+    <p>Se agrega NOT:</p>
+    <ul>
+        <li>I am not</li>
+        <li>He is not (isn't)</li>
+        <li>They are not (aren't)</li>
+    </ul>
+
+    <h3>4️⃣ Forma de pregunta</h3>
+    <p>El verbo va primero:</p>
+    <ul>
+        <li>Are you happy?</li>
+        <li>Is she your friend?</li>
+    </ul>
+
+    <h3>🎯 Ejercicios</h3>
+
+    <p>1. She _ my teacher.</p>
+    <input type="text" id="tb1">
+    <button onclick="checkAnswer('tb1','is','tbR1')">Revisar</button>
+    <p id="tbR1"></p>
+
+    <p>2. They _ students.</p>
+    <input type="text" id="tb2">
+    <button onclick="checkAnswer('tb2','are','tbR2')">Revisar</button>
+    <p id="tbR2"></p>
+</section>
+
+<!-- SIMPLE PRESENT -->
+<section id="present" class="content hidden">
+    <h2>📗 SIMPLE PRESENT</h2>
+
+    <h3>1️⃣ ¿Cuándo se usa?</h3>
+    <p>
+        Para hablar de rutinas y cosas que pasan siempre.
+    </p>
+
+    <h3>2️⃣ Estructura</h3>
+    <p><b>Pronombre + Verbo</b></p>
+
+    <h3>⚠ Regla importante</h3>
+    <p>
+        Con HE, SHE, IT se agrega S o ES al verbo.
+    </p>
+
+    <table>
+        <tr><th>Pronombre</th><th>Ejemplo</th></tr>
+        <tr><td>I</td><td>I play</td></tr>
+        <tr><td>He</td><td>He plays</td></tr>
+        <tr><td>She</td><td>She watches</td></tr>
+    </table>
+
+    <h3>3️⃣ Negativo</h3>
+    <p>Se usa DO NOT o DOES NOT</p>
+
+    <ul>
+        <li>I do not play</li>
+        <li>He does not play</li>
+    </ul>
+
+    <h3>🎯 Ejercicio</h3>
+
+    <p>He __ (eat) pizza.</p>
+    <input type="text" id="sp1">
+    <button onclick="checkAnswer('sp1','eats','spR1')">Revisar</button>
+    <p id="spR1"></p>
+</section>
+
+<!-- PRESENT CONTINUOUS -->
+<section id="continuous" class="content hidden">
+    <h2>📙 PRESENT CONTINUOUS</h2>
+
+    <p>
+        Se usa para acciones que están pasando ahora mismo.
+    </p>
+
+    <h3>Fórmula:</h3>
+    <p><b>To Be + Verbo + ING</b></p>
+
+    <h3>Ejemplo:</h3>
+    <ul>
+        <li>I am studying</li>
+        <li>She is dancing</li>
+    </ul>
+
+    <h3>🎯 Ejercicio</h3>
+
+    <p>They are __ (play).</p>
+    <input type="text" id="pc1">
+    <button onclick="checkAnswer('pc1','playing','pcR1')">Revisar</button>
+    <p id="pcR1"></p>
+</section>
+
+<!-- PAST SIMPLE -->
+<section id="past" class="content hidden">
+    <h2>📕 PAST SIMPLE</h2>
+
+    <p>
+        Se usa para hablar del pasado.
+    </p>
+
+    <h3>Verbos regulares:</h3>
+    <p>Se agrega ED</p>
+
+    <h3>Verbos irregulares:</h3>
+    <ul>
+        <li>go → went</li>
+        <li>eat → ate</li>
+        <li>see → saw</li>
+    </ul>
+
+    <h3>🎯 Ejercicio</h3>
+
+    <p>Yesterday I __ (go) to school.</p>
+    <input type="text" id="ps1">
+    <button onclick="checkAnswer('ps1','went','psR1')">Revisar</button>
+    <p id="psR1"></p>
+</section>
+
+<!-- FUTURE -->
+<section id="future" class="content hidden">
+    <h2>📘 FUTURE</h2>
+
+    <h3>WILL</h3>
+    <p>Decisiones rápidas.</p>
+
+    <h3>GOING TO</h3>
+    <p>Planes.</p>
+
+    <h3>🎯 Ejercicio</h3>
+
+    <p>I am __ study tomorrow. (plan)</p>
+    <input type="text" id="f1">
+    <button onclick="checkAnswer('f1','going to','fR1')">Revisar</button>
+    <p id="fR1"></p>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="content hidden">
+    <h2>🏆 Examen Final</h2>
+
+    <p>1. She _ happy.</p>
+    <button onclick="quiz('is')">is</button>
+    <button onclick="quiz('are')">are</button>
+
+    <p>2. He __ (play) soccer.</p>
+    <button onclick="quiz('plays')">plays</button>
+    <button onclick="quiz('play')">play</button>
+
+    <p id="score"></p>
+</section>
+
+</main>
+
+<footer>
+    <p>English Fun Academy © 2026</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
